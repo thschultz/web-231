@@ -1,0 +1,35 @@
+<!--Web 231 - Enterprise JavaScript 1
+Student: Thomas Schultz
+Instructor: Richard Krasso
+Sources: https://css-tricks.com/almanac/selectors/v/visited/
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I.</title>
+    <link rel="stylesheet" href="/site.css">
+</head>
+
+<body>
+    <h1>Exercise 2.2 - Hello JavaScript</h1>
+    <button onclick="textAlert()">What course am I taking?</button>
+    <p id="txtMyWorld"></p>
+    <a class="return-home" href="/index.html">Return</a>
+    <script>
+        document.getElementById("txtMyWorld").innerHTML = "You are now in Schultz's world!";
+    </script>
+    <script>
+        function textAlert() {
+            alert("WEB 231 - Enterprise JavaScript 1.");
+        }
+    </script>
+</body>
+
+</html>
