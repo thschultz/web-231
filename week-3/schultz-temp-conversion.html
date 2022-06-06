@@ -1,0 +1,52 @@
+<!--Web 231 - Enterprise JavaScript 1
+Student: Thomas Schultz
+Instructor: Richard Krasso
+Sources: https://css-tricks.com/almanac/selectors/v/visited/
+https://www.w3schools.com/jsref/event_onclick.asp
+https://www.w3schools.com/jsref/prop_text_value.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I.</title>
+    <link rel="stylesheet" href="schultz-temp-conversion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>Welcome to the Temperature Conversion App!</h1>
+        <div id="card">
+            <h2>Fahrenheit to Celsius Converter</h2>
+            <label for="txtFahrenheit">Fahrenheit value:</label>
+            <input type="text" id="txtFahrenheit">
+            <br>
+            <button type="button" onclick="fahrenheitCelsius()">Convert Temperature</button>
+        </div>
+        <div id="card">
+            <h2>Conversion Results</h2>
+            <p id="results"></p>
+        </div>
+        <a class="return-home" href="/web-231/index.html">Return</a>
+    </div>
+    <script>
+        //Function that takes the input from the user and converts the number to Celsius
+        function fahrenheitCelsius() {
+            //Variables to grab the input and the formula for converting fahrenheit to celsius
+            var fahrenheit = document.getElementById('txtFahrenheit').value;
+            var celsius = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
+            //Outputting the resulting to the results id in the second card
+            document.getElementById('results').innerHTML = celsius;
+        }
+    </script>
+</body>
+
+</html>

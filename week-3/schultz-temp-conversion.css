@@ -1,0 +1,59 @@
+h1,
+h2 {
+    text-align: center;
+}
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    background-color: white !important;
+    color: #3C275A;
+    font-size: 28px;
+}
+
+button {
+    background-color: #3C275A;
+    color: white;
+    padding: 10px 30px;
+    margin-top: 15px;
+}
+
+#card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px 50px;
+}
+
+p {
+    text-align: center;
+    font-size: 28px;
+}
+
+a {
+    color: #453674;
+    text-decoration: none;
+}
+
+.return-home {
+    color: #4f3674;
+    text-decoration: none;
+}
+
+.return-home:hover {
+    background: #d6a800;
+    color: #4f3674;
+}
+
+.return-home:visited {
+    color: #3c275a;
+}
