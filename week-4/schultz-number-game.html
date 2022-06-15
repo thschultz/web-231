@@ -1,0 +1,66 @@
+<!--Web 231 - Enterprise JavaScript 1
+Student: Thomas Schultz
+Instructor: Richard Krasso
+Sources: https://www.w3schools.com/js/js_if_else.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="schultz-number-game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <div id="card">
+            <h1>Welcome to the numbers game!</h1>
+            <h1>Pick a number between 1 and 10</h1>
+            <label for="txtMyNumber">Enter a guess: </label>
+            <input type="text" id="txtMyNumber"><br>
+            <button type="submit" onclick="btnSubmit()">Submit</button>
+        </div>
+        <div id="card">
+            <h1>Results</h1>
+            <p id="results"></p>
+        </div>
+        <a class="return-home" href="/web-231/index.html">Return</a>
+    </div>
+    <script>
+        //generates a random number from 1 and 10
+        const rnd = Math.floor((Math.random() * 10) + 1);
+        //function for number name
+        function btnSubmit() {
+            //variable for entered number from user
+            var myNumber = document.getElementById('txtMyNumber').value;
+            //variable for selecting correct number
+            var winner = "Congratulations! You picked the correct number!";
+            //variable for greater than number that was picked
+            var bigger = "The number is greater than " + myNumber;
+            //variable for lesser than number that was picked
+            var smaller = "The number is smaller than " + myNumber;
+
+            //if user number equals the random number, prints winner variable
+            if (rnd == myNumber) {
+                document.getElementById('results').innerHTML = winner;
+            }
+            //if user number is greater than the random number, prints greater than variable
+            else if (rnd > myNumber) {
+                document.getElementById('results').innerHTML = bigger;
+            }
+            //if user number is lesser than the random number, prints lesser than variable
+            else {
+                document.getElementById('results').innerHTML = smaller;
+            }
+        }
+    </script>
+</body>
+
+</html>
