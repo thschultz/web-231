@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I.</title>
+    <link rel="stylesheet" href="schultz-sequence-game.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Welcome to the sequence game!</h1>
+        <div id="card">
+            <h2>Sequence Selection Form</h2>
+            <label for="sequenceSelect">Choose a number sequence:</label>
+            <select name="sequenceSelect" id="sequenceSelect">
+                <option value="select">--Select--</option>
+                <option value="fibonacci">Fibonacci</option>
+                <option value="even">Even Numbers</option>
+                <option value="odd">Odd Numbers</option>
+            </select>
+            <button id="btnDisplaySequence" onclick="sequenceDisplay()">Display Sequence</button>
+        </div>
+        <div id="card">
+            <h2>Sequence Results</h2>
+            <p id="results"></p>
+        </div>
+        <a class="return-home" href="/web-231/index.html">Return</a>
+    </div>
+    <script>
+        function sequenceDisplay() {
+            var num1 = 0;
+            var num2 = 1;
+            var next;
+            let fibonacciSequenceText = "";
+            if (document.getElementById('sequenceSelect').value == "fibonacci") {
+                while (num1 < 40) {
+                    fibonacciSequenceText += num1 + ", ";
+                    next = num1 + num2;
+                    num1 = num2;
+                    num2 = next;
+                }
+                document.getElementById('results').innerHTML = fibonacciSequenceText.slice(0, -2);
+            } else if (document.getElementById('sequenceSelect').value == "even") {
+                var num3 = 2;
+                if (num3 % 1 == 0) {
+                    do {
+                        fibonacciSequenceText += num3 + ", ";
+                        num3 += 2;
+                    }
+                    while (num3 <= 20);
+                }
+                document.getElementById('results').innerHTML = fibonacciSequenceText.slice(0, -2);
+            } else if (document.getElementById('sequenceSelect').value == "odd") {
+                for (next = 1; next < 20; next++) {
+                    if (next % 2 != 0) {
+                        fibonacciSequenceText += next + ", ";
+                    }
+                }
+                document.getElementById('results').innerHTML = fibonacciSequenceText.slice(0, -2);
+
+            } else {
+                window.alert("Invalid selection, please try again!")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
