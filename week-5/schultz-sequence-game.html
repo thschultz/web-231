@@ -1,3 +1,9 @@
+<!--Web 231 - Enterprise JavaScript 1
+Student: Thomas Schultz
+Instructor: Richard Krasso
+Sources: https://www.w3schools.com/js/js_loop_while.asp
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEB 231 – Enterprise JavaScript I.</title>
     <link rel="stylesheet" href="schultz-sequence-game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -21,6 +31,7 @@
                 <option value="even">Even Numbers</option>
                 <option value="odd">Odd Numbers</option>
             </select>
+            <br>
             <button id="btnDisplaySequence" onclick="sequenceDisplay()">Display Sequence</button>
         </div>
         <div id="card">
@@ -30,11 +41,14 @@
         <a class="return-home" href="/web-231/index.html">Return</a>
     </div>
     <script>
+        //function to run the code. onclick function
         function sequenceDisplay() {
+            //setting variables that I will use for the loops
             var num1 = 0;
             var num2 = 1;
             var next;
             let fibonacciSequenceText = "";
+            //while loop to display fibonacci sequence
             if (document.getElementById('sequenceSelect').value == "fibonacci") {
                 while (num1 < 40) {
                     fibonacciSequenceText += num1 + ", ";
@@ -43,7 +57,9 @@
                     num2 = next;
                 }
                 document.getElementById('results').innerHTML = fibonacciSequenceText.slice(0, -2);
-            } else if (document.getElementById('sequenceSelect').value == "even") {
+            }
+            //do while loop to display even numbers
+            else if (document.getElementById('sequenceSelect').value == "even") {
                 if (num1 % 2 == 0) {
                     do {
                         fibonacciSequenceText += num1 + ", ";
@@ -52,7 +68,9 @@
                     while (num1 <= 20);
                 }
                 document.getElementById('results').innerHTML = fibonacciSequenceText.slice(2, -2);
-            } else if (document.getElementById('sequenceSelect').value == "odd") {
+            }
+            //for loop to display odd numbers
+            else if (document.getElementById('sequenceSelect').value == "odd") {
                 for (next = 1; next < 20; next++) {
                     if (next % 2 != 0) {
                         fibonacciSequenceText += next + ", ";
@@ -60,7 +78,9 @@
                 }
                 document.getElementById('results').innerHTML = fibonacciSequenceText.slice(0, -2);
 
-            } else {
+            }
+            //if select is picked onclick, display this message
+            else {
                 window.alert("Invalid selection, please try again!")
             }
 
