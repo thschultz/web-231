@@ -1,0 +1,83 @@
+/*Aligns center*/
+h1,
+h2 {
+    text-align: center;
+}
+
+/*Settings for container holding the game*/
+#container {
+    max-width: 720px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*Font-family for body*/
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+/*Color and font size for h-tags*/
+h1,
+h2,
+h3,
+h4 {
+    background-color: white !important;
+    color: #3C275A;
+    font-size: 28px;
+}
+
+/*Coloring, padding, margin for button*/
+button {
+    background-color: #3C275A;
+    color: white;
+    padding: 10px 100px;
+    margin-top: 15px;
+}
+
+/*Styling for card*/
+#card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px 50px;
+    margin-top: 50px;
+}
+
+/*Centering and font-size for p-tag*/
+p {
+    text-align: center;
+    font-size: 28px;
+}
+
+/*Return home styling*/
+a {
+    color: #453674;
+    text-decoration: none;
+}
+
+/*Return home styling*/
+.return-home {
+    color: #4f3674;
+    text-decoration: none;
+}
+
+/*Return home styling*/
+.return-home:hover {
+    background: #d6a800;
+    color: #4f3674;
+}
+
+/*Return home styling*/
+.return-home:visited {
+    color: #3c275a;
+}
+
+/*Drop Down Styling*/
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

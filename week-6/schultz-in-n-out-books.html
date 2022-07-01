@@ -1,0 +1,148 @@
+<!--Web 231 - Enterprise JavaScript 1
+Student: Thomas Schultz
+Instructor: Richard Krasso
+Sources: https://www.w3schools.com/js/js_loop_while.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I.</title>
+    <link rel="stylesheet" href="../global.css" type="text/css">
+    <link rel="stylesheet" href="schultz-in-n-out-book.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>Welcome to In-N-Out-Books</h1>
+        <div id="card">
+            <h2>My Favorites</h2>
+            <label for="choice">Choose a number sequence:</label>
+            <select name="choice" id="choice" class="drop-down-menu">
+                <option value="select">--Select--</option>
+                <option value="books">Top 3 Favorite Books</option>
+                <option value="author">Top 3 Favorite Authors</option>
+            </select>
+            <br>
+            <button id="btnDisplayListing" onclick="btnDisplayListing()">Display Listing</button>
+        </div>
+        <div id="favorite-books">
+            <table>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                </tr>
+                <tr>
+                    <td id="fellowID"></td>
+                    <td id="fellowName"></td>
+                    <td id="fellowPage"></td>
+                </tr>
+                <tr>
+                    <td id="towerID"></td>
+                    <td id="towerName"></td>
+                    <td id="towerPage"></td>
+                </tr>
+                <tr>
+                    <td id="returnID"></td>
+                    <td id="returnName"></td>
+                    <td id="returnPage"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="favorite-authors">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Genre</th>
+                </tr>
+                <tr>
+                    <td id="authorNameOne"></td>
+                    <td id="genreNameOne"></td>
+                </tr>
+                <tr>
+                    <td id="authorNameTwo"></td>
+                    <td id="genreNameTwo"></td>
+                </tr>
+
+            </table>
+        </div>
+        <a class="return-home" href="/web-231/index.html">Return</a>
+    </div>
+    </div>
+    <script>
+        //Setting Object Literals for Favorite Books
+        const fellowship = {
+            name: "The Hobbit",
+            pages: 432,
+            isbn: 1234
+        };
+        const towers = {
+            name: "Ender's Game",
+            pages: 324,
+            isbn: 1235
+        };
+        const returnKing = {
+            name: "The Return of the King",
+            pages: 300,
+            isbn: 1236
+        };
+        //Setting Object Literals for Favorite Authors
+        const authorFirst = {
+            name: "George RR Martin",
+            genre: "Fantasy"
+        };
+        const authorSecond = {
+            name: "Orson Scott Card",
+            genre: "Sci-Fi"
+        }
+        //Getting Element Ids for favorite books and setting Objects to them
+        document.getElementById('fellowID').innerHTML = fellowship["isbn"];
+        document.getElementById('fellowName').innerHTML = fellowship["name"];
+        document.getElementById('fellowPage').innerHTML = fellowship["pages"];
+        document.getElementById('towerID').innerHTML = towers["isbn"];
+        document.getElementById('towerName').innerHTML = towers["name"];
+        document.getElementById('towerPage').innerHTML = towers["pages"];
+        document.getElementById('returnID').innerHTML = returnKing["isbn"];
+        document.getElementById('returnName').innerHTML = returnKing["name"];
+        document.getElementById('returnPage').innerHTML = returnKing["pages"];
+
+        //Getting Element Ids for favorite authors and setting Objects to them
+        document.getElementById('authorNameOne').innerHTML = authorFirst["name"];
+        document.getElementById('genreNameOne').innerHTML = authorFirst["genre"];
+        document.getElementById('authorNameTwo').innerHTML = authorSecond["name"];
+        document.getElementById('genreNameTwo').innerHTML = authorSecond["genre"];
+
+        //setting variables for books and authors
+        let books = document.getElementById('favorite-books');
+        let authors = document.getElementById('favorite-authors');
+        //display none until selected
+        books.style.display = "none";
+        authors.style.display = "none";
+        //Onclick Function to change from favorite books and authors
+        function btnDisplayListing() {
+            if (document.getElementById('choice').value == "books") {
+                books.style.display = "block";
+                authors.style.display = "none";
+
+            }
+            else if (document.getElementById('choice').value == "author") {
+                authors.style.display = "block";
+                books.style.display = "none";
+            }
+            //display none when select is picked
+            else {
+                books.style.display = "none";
+                authors.style.display = "none";
+            }
+        }
+    </script>
+</body>

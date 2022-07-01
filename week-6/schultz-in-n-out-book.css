@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+/* Styling for table headers */
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+}
+
+
+/* Styling for table data & header */
+
+td,
+th {
+    border: 1px solid;
+    border-color: #ddd;
+    padding: 8px;
+}
+
+
+/* Styling for table row on hover */
+
+tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+}
