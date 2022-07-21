@@ -1,0 +1,18 @@
+#shuffled-results {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    
+    grid-gap: 10px 10px;
+  }
+  
+  
+  .player-card {
+    text-align: center;
+  }
+  
+  
+  .card {
+    margin-right: auto;
+    margin-left: auto;
+  }
