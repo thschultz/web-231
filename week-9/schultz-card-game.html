@@ -51,28 +51,36 @@ https://www.w3schools.com/js/js_errors.asp
 
 
     <script>
+        //Class with constructor for face and suit
         class Card {
             constructor(face, suit) {
                 this.face = face;
                 this.suit = suit;
             }
         }
-
+        //Dealer class with no parameters
         class Dealer {
+            //variable with value of 52
             CARD_COUNT = 52;
+            //empty array
             cards = [];
+            //array with card deck
             faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+            //array with suits
             suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
             constructor() {
                 this.getDeckOfCards();
             }
-
+            //get of cards function with no parameters
             getDeckOfCards() {
+                //for loop with 52 iterations
                 for (let count = 0; count < this.CARD_COUNT; count++) {
                     this.cards[count] = new Card(this.faces[count % 13], this.suits[Math.floor(count / 13)]);
                 }
             }
+            //shuffle function
             shuffle() {
+                //for loop with 52 iterations
                 for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
                     let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
 
@@ -83,6 +91,7 @@ https://www.w3schools.com/js/js_errors.asp
             }
 
         }
+        //function with four parameters. displaying cards
         function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
             return `<div class='card player-card'>
                         <div class='card-title' style='color: ${faceColor}; font-size: 20px; padding-left: 10px; text-align: left;'>
@@ -93,6 +102,7 @@ https://www.w3schools.com/js/js_errors.asp
                         </div>    
                     </div> `;
         }
+        //function to run shuffle, and passing the card object to icon class
         function btnDealCards() {
             let dealer = new Dealer();
             dealer.shuffle();
